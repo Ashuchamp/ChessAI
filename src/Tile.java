@@ -27,4 +27,23 @@ public abstract class Tile {
 		}
 	}
 	
+	public static final class OccupiedTile extends Tile{
+		Piece pieceOnTile;
+		
+		OccupiedTile(int coordinate, Piece piece){
+			super(coordinate);
+			this.pieceOnTile = piece;
+		}
+		
+		@Override
+		public boolean isTileOccupied() {
+			return true;
+		}
+		
+		@Override
+		public Piece getPiece() {
+			return this.pieceOnTile;
+		}
+	}
+	
 }
